@@ -1,10 +1,40 @@
-<?
-if ($_SERVER['REQUEST_METHOD'] === 'POST')
-{
-  $file = '/tmp/sample-app.log';
-  $taskname = $_SERVER['HTTP_X_AWS_SQSD_TASKNAME'];
-  $schedule_time = $_SERVER['HTTP_X_AWS_SQSD_SCHEDULED_AT'];
-  $message = sprintf(" Received task %s scheduled at %s.", $taskname, $schedule_time);
-  file_put_contents($file, date('Y-m-d H:i:s') . $message . "\n", FILE_APPEND);
-}
-?>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+<EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text" >
+        <requestFocus />
+
+</EditText>  
+
+<resources>
+    <string android:name="app_name"></string>
+    <string android:name="edit_message"></string>
+    <string android:name="button_send"></string>
+    <string android:name="action_settings"></string>
+    <string android:name="title_activity_main"></string>
+</resources>
+
+<Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_send" />
+
+<EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text" >
+        <requestFocus />
+
+</EditText> 
+<?xml version="1.0" encoding="utf-8"?>
