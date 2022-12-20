@@ -10,6 +10,7 @@ pipeline{
     // some block
 }
             }
+        }
     stages{
         stage('deploy to v2'){
             steps  {
@@ -17,4 +18,5 @@ pipeline{
             }
         }
     }
+}
 }
