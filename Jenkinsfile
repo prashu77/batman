@@ -2,16 +2,7 @@ pipeline{
     agent any
     environment{
         staging_server="20.115.120.119"
-    }
-    stages{
-        stage(private-key){
-            steps  {
-                sshagent(['private-key']) {
-    // some block
-}
-            }
-        }
-    }
+    }   
     stages{
         stage('deploy to v2'){
             steps  {
