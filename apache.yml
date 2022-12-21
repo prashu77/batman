@@ -11,7 +11,7 @@
         name: httpd
         state: started
         enabled: True
-    - name: Deploy static website
+    - name: Deploy to server
       copy:
         src: .
         dest: /var/www/html/
