@@ -11,7 +11,7 @@ pipeline{
         }
         stage('composer'){
             steps  {
-                sh 'composer install --no-interaction --prefer-dist'
+                sh 'composer install'
             }
         }
         stage('deploy to v2'){
