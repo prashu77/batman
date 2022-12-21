@@ -11,7 +11,7 @@ pipeline{
         }
         stage('deploy to v2'){
             steps  {
-                sh 'scp -r ${WORKSPACE}/* ibllnxreps2admin@${staging_server}:/var/www/html/'
+                sh 'scp -P 22 -r ${WORKSPACE}/* ibllnxreps2admin@${staging_server}:/var/www/html/'
             }
         }
     }
