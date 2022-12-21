@@ -9,11 +9,6 @@ pipeline{
                 sh 'php --version'
             }
         }
-        stage('composer'){
-            steps  {
-                sh 'composer install'
-            }
-        }
         stage('deploy to v2'){
             steps  {
                 sh 'scp -r ${WORKSPACE}/* ibllnxreps2admin@${staging_server}:/var/www/html/'
