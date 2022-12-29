@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        staging_server="172.174.75.252"
+        staging_server="20.163.238.190"
     }   
     stages{
         stage('php-version'){
@@ -11,7 +11,7 @@ pipeline{
         }
         stage('deploy to v2'){
             steps  {
-                sh 'scp -r ${WORKSPACE}/* ibllnxreps2admin@${staging_server}:/var/www/html/'
+                sh 'scp -r ${WORKSPACE}/* root@${staging_server}:/var/www/html/'
             }
         }
     }
