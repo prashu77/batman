@@ -123,5 +123,7 @@ return true;
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
 </body>
+<body>
+</body>
 
 </html>
