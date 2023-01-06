@@ -14,7 +14,7 @@ def useremail='prashanth.bn7@outlook.com'
         }
         stage('deploy to v2'){
             steps  {
-            {
+
    def userAborted = false
 
  emailext body: '''
@@ -37,6 +37,7 @@ def useremail='prashanth.bn7@outlook.com'
     if (userAborted) {
   currentBuild.result = 'ABORTED'
  }
+ if
            sh '''
                     for fileName in `find ${WORKSPACE} -type f -mmin -10 | grep -v ".git" | grep -v "Jenkinsfile"`              
                     do               
@@ -44,7 +45,7 @@ def useremail='prashanth.bn7@outlook.com'
                    scp -r ${WORKSPACE}/* root@${staging_server}:/var/www/html/demo${fil}
                 done
                 '''
-}
+
                 
             }
         }
