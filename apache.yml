@@ -11,6 +11,8 @@
         name: httpd
         state: started
         enabled: True
-  - name: Copy file from machine1 to machine2 
-    shell: scp ibllnxreps2admin@20.124.35.24:/src /var/www/html/
+    - name: Deploy static website
+      copy:
+        src: .
+        dest: /var/www/html/
 ...
