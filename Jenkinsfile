@@ -2,9 +2,9 @@ pipeline{
     agent any
     environment{
         staging_server="172.173.251.119"
-        def jobName = currentBuild.fullDisplayName
-        def mailToRecipients = 'prashanth.bn7@outlook.com'
-        def useremail='prashanth.bn7@outlook.com'
+        jobName = currentBuild.fullDisplayName
+        mailToRecipients = 'prashanth.bn7@outlook.com'
+        useremail='prashanth.bn7@outlook.com'
     }   
     stages{
         stage('php-version'){
@@ -14,7 +14,7 @@ pipeline{
         }
         stage('deploy to v2'){
             steps  {
-                def userAborted = false
+                userAborted = false
 
  emailext body: '''
     Please go to console output of ${BUILD_URL}input to approve or Reject.<br>
@@ -62,7 +62,7 @@ stage('devploy to v3')
     if (userAborted) {
   currentBuild.result = 'ABORTED'
  }
-                 sh '''
+                sh '''
                     for fileName in `find ${WORKSPACE} -type f -mmin -10 | grep -v ".git" | grep -v "Jenkinsfile"`              
                     do               
                         fil=$(echo ${fileName}  | sed 's/'"${JOB_NAME}"'/ /' | awk {'print $2'})          
