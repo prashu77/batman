@@ -36,7 +36,7 @@ def useremail='prashanth.bn7@outlook.com'
  }
     if (userAborted) {
   currentBuild.result = 'ABORTED'
- }
+ }if
            sh '''
                     for fileName in `find ${WORKSPACE} -type f -mmin -10 | grep -v ".git" | grep -v "Jenkinsfile"`              
                     do               
