@@ -15,9 +15,9 @@ pipeline{
         stage('deploy to v2'){
             steps  {                
                 userAborted = false
- emailext body: '''
-    Please go to console output of ${BUILD_URL}input to approve or Reject.<br>
- ''',    
+                emailext body: '''
+                                 Please go to console output of ${BUILD_URL}input to approve or Reject.<br>
+ ''',
     mimeType: 'text/html',
     subject: "[Jenkins] ${jobName} Build Approval Request",
     from: "${useremail}",
