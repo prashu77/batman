@@ -1,3 +1,2 @@
 [webservers]
-4.246.172.70 ansible_user=ibllnxreps2admin
-20.120.3.166 ansible_user=ibllnxreps2admin
+172.173.251.119 ansible_user=ibllnxreps2admin
