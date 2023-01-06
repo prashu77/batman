@@ -2,9 +2,9 @@ pipeline{
     agent any
     environment{
         staging_server="172.173.251.119"
-        jobName = "currentBuild.fullDisplayName"
-        mailToRecipients = 'prashanth.bn7@outlook.com'
-        useremail='prashanth.bn7@outlook.com'
+        def jobName = "currentBuild.fullDisplayName"
+        def mailToRecipients = 'prashanth.bn7@outlook.com'
+        def useremail='prashanth.bn7@outlook.com'
     }   
     stages{
         stage('php-version'){
