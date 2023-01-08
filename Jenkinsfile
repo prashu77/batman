@@ -15,7 +15,7 @@ pipeline{
         always{
             mail to: "prashanthbn777@gmail.com",
             subject: "approval or abort",
-            body: pls go to link for approval or abort "http://20.124.35.24:8080/job/dev/"
+            body: pls go to link for approval or abort "http://20.124.35.24:8080/job/dev/",
         }
     }
                 timeout(time: 15, unit: "MINUTES") {
