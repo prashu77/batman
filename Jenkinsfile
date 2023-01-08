@@ -11,6 +11,13 @@ pipeline{
         }
         stage('deploy to v2'){
             steps  {
+                post{
+        always{
+            mail to: "prashanthbn777@gmail.com",
+            subject: "approval or abort",
+            body: pls go to link for approval or abort "http://20.124.35.24:8080/job/dev/"
+        }
+    }
                 timeout(time: 15, unit: "MINUTES") {
 	                    input message: 'Do you want to approve the deployment?', ok: 'Yes'
                 }
