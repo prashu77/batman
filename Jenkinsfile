@@ -32,7 +32,7 @@ http://20.124.35.24:8080/job/dev/''', cc: '', from: '', replyTo: '', subject: ' 
         stage(''){
             steps  {
                 mail bcc: '', body: '''The committed code are deployed to server pls check . 
-http://20.124.35.24:8080/job/dev/''', cc: '', from: '', replyTo: '', subject: 'files are deployed ?  ', to: 'prashanthbn777@gmail.com'
+http://20.124.35.24:8080/job/dev/''', cc: '', from: '', replyTo: '', subject: 'files are deployed   ', to: 'prashanthbn777@gmail.com'
             }
         }
     }
