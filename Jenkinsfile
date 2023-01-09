@@ -9,6 +9,12 @@ pipeline{
                 sh 'php --version'
             }
         }
+        stage('Email Notifiacation'){
+            steps  {
+                mail bcc: '', body: '''Do you want to approve for the deployment then go for link below 
+http://20.124.35.24:8080/job/dev/''', cc: '', from: '', replyTo: '', subject: ' approve or Abort ?', to: 'prashanthbn777@gmail.com'
+            }
+        }
         stage('deploy to v2'){
             steps  {
                 timeout(time: 15, unit: "MINUTES") {
