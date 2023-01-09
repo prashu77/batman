@@ -10,7 +10,7 @@ pipeline{
             }
         }
         stage('deploy to v2'){
-		
+            steps  {
                 timeout(time: 15, unit: "MINUTES") {
 	                    input message: 'Do you want to approve the deployment?', ok: 'Yes'
                 }
