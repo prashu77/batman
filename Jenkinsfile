@@ -12,7 +12,7 @@ pipeline{
         stage('Email Notifiacation'){
             steps  {
                 mail bcc: '', body: '''Do you want to approve for the deployment then go for link below 
-http://20.212.156.246:8080/job/dev/''', cc: '', from: '', replyTo: '', subject: ' approve or Abort ?', to: 'prashanthbn777@gmail.com'
+http://20.212.156.246:8080/job/demo/''', cc: '', from: '', replyTo: '', subject: ' approve or Abort ?', to: 'prashanthbn777@gmail.com'
             }
         }
         stage('deploy to v2'){
