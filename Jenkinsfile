@@ -1,18 +1,12 @@
 pipeline{
     agent any
     environment{
-        staging_server="20.124.117.115"
+        staging_server="74.235.249.118"
     }   
     stages{
         stage('php-version'){
             steps  {
                 sh 'php --version'
-            }
-        }
-        stage('Email Notifiacation'){
-            steps  {
-                mail bcc: '', body: '''Do you want to approve for the deployment then go for link below 
-http://20.124.35.24:8080/job/dev/''', cc: '', from: '', replyTo: '', subject: ' approve or Abort ?', to: 'prashanthbn777@gmail.com'
             }
         }
         stage('deploy to v2'){
@@ -27,12 +21,6 @@ http://20.124.35.24:8080/job/dev/''', cc: '', from: '', replyTo: '', subject: ' 
                    scp -r ${WORKSPACE}${fil} ibllnxreps2admin@${staging_server}:/var/www/html/demo${fil}
                 done
                 '''
-            }
-        }
-        stage('email'){
-            steps  {
-                mail bcc: '', body: '''The committed code are deployed to server pls check . 
-server url''', cc: '', from: '', replyTo: '', subject: 'files are deployed   ', to: 'prashanthbn777@gmail.com'
             }
         }
     }
