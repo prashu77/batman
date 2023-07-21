@@ -11,7 +11,7 @@ pipeline{
         }
         stage('deploy to v2'){
             steps  {
-                sh 'scp -r ${WORKSPACE}${fil} adminuser@${staging_server}:/var/www/html/demo${fil}'
+                sh 'scp -r ${WORKSPACE}/* adminuser@${staging_server}:/var/www/html/demo'
             }
         }
     }
